@@ -1,0 +1,26 @@
+newHRDataBase> use newHRDataBase
+
+newHRDataBase> db.createCollection("PersonalInfo");
+newHRDataBase> db.createCollection("ProfessionalInfo");
+
+newHRDataBase> show collections
+
+newHRDataBase>db.PersonalInfo.insert(
+{Empid:"X20221010",EmpName:"Pritam",Age:26,Gender:"Male",contact:9988776655,city:"Delhi"})
+newHRDataBase> db.PersonalInfo.insertMany([
+{Empid:"X20221011",EmpName:"Gitanjali",Age:27,Gender:"Female",city:"New York"}, 
+{Empid:"X20221013",EmpName:"Sonam",Age:29,Gender:"Female",Contact:7789995533,city:"Bangalore"},
+{Empid:"X20221017",Empname:"Shekhar",Age:29,Gender:"Male",City:"Pune"}])
+newHRDataBase> db.PersonalInfo.find().pretty()
+
+
+newHRDataBase> db.ProfessinalInfo.insertMany([  {Designation:'Consultant',Department:'Finance',Income:80000},
+{Designation:"Sr. Developer",Department:"IT",Income:90000},
+{Designation:"Data Analyst",Department:"Software",Income:150000},{Designation:"Manager",Department:"Logistics",Income:200000}])
+newHRDataBase> db.ProfessinalInfo.find().pretty()
+
+
+newHRDataBase> db.PersonalInfo.update({'Age':27},{$set:{'Age':25}})
+newHRDataBase> db.PersonalInfo.update({'City':'New York'},{$set:{'City':'Chennai'}})
+newHRDataBase> db.PersonalInfo.update({'Age':29},{$set:{'Age':31}}
+newHRDataBase> db.PersonalInfo.update({'city':' Bangalore'},{$set:{'city':'Kolkata'}})
